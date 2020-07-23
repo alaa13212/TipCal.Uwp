@@ -6,19 +6,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:MvvmCross.Platforms.Uap.Views"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
+    Width="460"
+    Height="300"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel Margin="12,0,12,0">
-        <TextBlock Text="SubTotal" />
-        <TextBox Text="{Binding SubTotal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        <TextBlock Text="Generosity" />
+    <StackPanel Margin="12,12,12,12" Spacing="10">
+        <muxc:NumberBox Header="SubTotal" Value="{Binding SubTotal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  AcceptsExpression="True"  SpinButtonPlacementMode="Compact"/>
         <Slider Value="{Binding Generosity,Mode=TwoWay}" 
+                Header="Generosity"
                 SmallChange="1" 
                 LargeChange="10" 
                 Minimum="0" 
                 Maximum="100" />
         <TextBlock Text="Tip to leave" />
-        <TextBlock Text="{Binding Tip}" />
+        <TextBlock Text="{Binding Tip}" HorizontalAlignment="Center" FontSize="20"/>
     </StackPanel>
 </views:MvxWindowsPage>

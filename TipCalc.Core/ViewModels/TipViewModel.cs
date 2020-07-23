@@ -21,20 +21,22 @@ namespace TipCalc.Core.ViewModels
 		}
 
 		private double _subTotal;
-		public double SubTotal {
+		public double SubTotal
+		{
 			get => _subTotal;
-			set { SetProperty(ref _subTotal, value); Recalculate(); }
+			set => SetProperty(ref _subTotal, value, Recalculate);
 		}
 
 		private int _generosity;
-		public int Generosity {
+		public int Generosity
+		{
 			get => _generosity;
-			set { SetProperty(ref _generosity, value); Recalculate(); }
+			set => SetProperty(ref _generosity, value, Recalculate);
 		}
 
-
 		private double _tip;
-		public double Tip {
+		public double Tip 
+		{
 			get => _tip;
 			set { SetProperty(ref _tip, value); }
 		}
